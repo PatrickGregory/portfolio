@@ -11,79 +11,91 @@ const ShowCaseSection = () => {
     const dashboardRef = useRef(null);
     const landingRef = useRef(null);
 
-   
-    // projects.forEach((card, index) => {
-    //     gsap.fromTo(
-    //         card,
-    //         {
-    //             y: 50, opacity: 0
-    //         },
-    //         {
-    //             y: 0,  opacity: 1, duration: 1, delay: 0.3 * (index + 1),
-    //             scrollTrigger:{
-    //                 trigger: card,
-    //                 start: 'top bottom-=100',
-    //             }
-    //         }
-    //     )
-    // });
 
-    useGSAP(()=>{
-         const projects = [travelRef.current, dashboardRef.current, landingRef.current];
 
-         projects.forEach((card, index) => {
-        gsap.fromTo(
-            card,
-            {
-                y: 50, opacity: 0
-            },
-            {
-                y: 0,  opacity: 1, duration: 1, delay: 0.3 * (index + 1),
-                scrollTrigger:{
-                    trigger: card,
-                    start: 'top bottom-=100',
+    useGSAP(() => {
+        const projects = [travelRef.current, dashboardRef.current, landingRef.current];
+
+        projects.forEach((card, index) => {
+            gsap.fromTo(
+                card,
+                {
+                    y: 50, opacity: 0
+                },
+                {
+                    y: 0, opacity: 1, duration: 1, delay: 0.3 * (index + 1),
+                    scrollTrigger: {
+                        trigger: card,
+                        start: 'top bottom-=100',
+                    }
                 }
-            }
-        )
-    });
+            )
+        });
 
-        gsap.fromTo(sectionRef.current, {opacity: 0}, {opacity: 1, duration: 1.5})
+        gsap.fromTo(sectionRef.current, { opacity: 0 }, { opacity: 1, duration: 1.5 })
     }, []);
-  return (
-    <section ref={sectionRef} id='work' className='app-showcase'>
-      <div className='w-full'>
-        <div className="showcaselayout">
-            {/* LEFT */}
-            <div className="first-project-wrapper" ref={travelRef}>
-                <div className="image-wrapper">
-                    <img src="/images/travelReservation.png" alt="Ryde" />
-                </div>
-                <div className="text-content">
-                    <h2>Vacation and business travels made with easy with a user-friendly "Travel Reservation App"</h2>
-                    <p className="text-white-50 md:text-xl">
-                        A website built with react, Bootstrap and React-Bootstrap for a good user experience. It allows users to book hotels, with ease. The app features a clean and modern design, making it easy to navigate and find the best deals for your travel needs.
-                    </p>
+    return (
+        <section ref={sectionRef} id='work' className='app-showcase'>
+            <div className='w-full'>
+                <div className="showcaselayout">
+                    {/* LEFT */}
+                    <div className="first-project-wrapper" ref={travelRef}>
+                        <div className="image-wrapper">
+                            <img src="/images/travelReservation.png" alt="Ryde" />
+                        </div>
+                        <div className="text-content">
+                            <h2>Vacation and business travels made with easy with a user-friendly "Travel Reservation App"</h2>
+                            <p className="text-white-50 md:text-xl">
+                                A website built with react, Bootstrap and React-Bootstrap for a good user experience. It allows users to book hotels, with ease. The app features a clean and modern design, making it easy to navigate and find the best deals for your travel needs.
+                            </p>
+                        </div>
+                        <a href='https://hotel-booking-site-sage.vercel.app/' className="cta-button group">
+                            <div className="bg-circle" />
+                            <p className="text">
+                                Check it out
+                            </p>
+                            <div className="arrow-wrapper">
+                                <img src="/images/arrow-down.svg" alt="arrow" />
+                            </div>
+                        </a>
+                    </div>
+                    {/* RIGHT */}
+                    <div className='project-list-wrapper overflow-hidden'>
+                        <div className="project" ref={dashboardRef}>
+                            <div className='image-wrapper bg-[#ffefdb]'>
+                                <img src="/images/dashboard.png" alt="React-Dashboard" />
+                            </div>
+                            <h2>Kantee Dashboard</h2>
+                            <a href='https://kantee-dashboard.vercel.app/' className="cta-button group">
+                                <div className="bg-circle" />
+                                <p className="text">
+                                    Check it out
+                                </p>
+                                <div className="arrow-wrapper">
+                                    <img src="/images/arrow-down.svg" alt="arrow" />
+                                </div>
+                            </a>
+                        </div>
+                        <div className="project" ref={landingRef}>
+                            <div className='image-wrapper bg-[#ffe7eb]'>
+                                <img src="/images/teamLanding.png" alt="Landing Page" />
+                            </div>
+                            <h2>A Landing Page built alongside my cohorts at <a href="https://Ijanafrica.com">IJAN Africa</a> to equip cohorts with collaborative skills</h2>
+                             <a href='https://landing-page-delta-brown-12.vercel.app/' className="cta-button group">
+                                <div className="bg-circle" />
+                                <p className="text">
+                                    Check it out
+                                </p>
+                                <div className="arrow-wrapper">
+                                    <img src="/images/arrow-down.svg" alt="arrow" />
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            {/* RIGHT */}
-            <div className='project-list-wrapper overflow-hidden'>
-                <div className="project" ref={dashboardRef}>
-                    <div className='image-wrapper bg-[#ffefdb]'>
-                        <img src="/images/dashboard.png" alt="React-Dashboard" />
-                    </div>
-                    <h2>Kantee Dashboard</h2>
-                </div>
-                <div className="project" ref={landingRef}>
-                    <div className='image-wrapper bg-[#ffe7eb]'>
-                        <img src="/images/teamLanding.png" alt="Landing Page" />
-                    </div>
-                    <h2>A Landing Page built alongside my cohorts at <a href="https://Ijanafrica.com">IJAN Africa</a> to equip cohorts with collaborative skills</h2>
-                </div>
-            </div>
-        </div>
-      </div>
-    </section>
-  )
+        </section>
+    )
 }
 
 export default ShowCaseSection
