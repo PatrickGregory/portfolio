@@ -65,7 +65,7 @@ const ExperienceSection = () => {
                         <div className="xl:w-2/6">
                             <GlowCard card={card} index={index}>
                                 <div>
-                                    <img src={card.imgPath} alt={card.title} />
+                                    <img className='bg-black-50 rounded-4xl size-25' src={card.imgPath} alt={card.title} />
                                 </div>
                             </GlowCard>
                         </div>
@@ -78,7 +78,7 @@ const ExperienceSection = () => {
 
                                 <div className="expText flex xl:gap-20 md:gap-10 gap-5 relative z-20">
                                     <div className="timeline-logo">
-                                        <img src={card.logoPath} alt='logo' />
+                                        <img className='bg-black-50 rounded-full' src={card.logoPath} alt='logo' />
                                     </div>
                                     <div>
                                         <h1 className='font-semibold text-3xl'>{card.title}</h1>
@@ -86,7 +86,7 @@ const ExperienceSection = () => {
                                             📅{card.date}
                                         </p>
                                         <p className='text-[#839cb5] italic'>
-                                            Responsibilities
+                                            Details
                                         </p>
                                         <ul className="list-disc ms-5">
                                             {card.responsibilities.map((responsibility) => (
