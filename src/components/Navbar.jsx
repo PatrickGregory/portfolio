@@ -35,7 +35,7 @@ const Navbar = () => {
 
         <a href="" id="contact" className="contact-btn group">
             <div className="inner">
-                <span>Contact Me</span>
+                <span><a href="https://www.linkedin.com/in/patrick-emeka">Contact Me</a></span>
             </div>
         </a>
       </div>
