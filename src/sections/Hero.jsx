@@ -57,7 +57,7 @@ const Hero = () => {
                             <h1>that deliver Results</h1>
                         </div>
                         <p className='text-white-50 md:text-xl relative z-10 overflow-hidden pointer-events-none'>
-                            Hi I'm Kantee, a developer with a passion for turning buisiness ideas into a success with code
+                            Hi I'm Kantee, a developer with a passion for turning business ideas into a success with code
                         </p>
                         <Button
                             className='md:w-80 md:h-16 w-60 h-12'
